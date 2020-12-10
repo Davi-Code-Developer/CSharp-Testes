@@ -8,30 +8,83 @@ namespace Calculadora
 {
     class Program
     {
-        static void soma()
+        static void Soma()
         {
             Console.Clear();
             Console.WriteLine("Soma de dois numeros");
             Console.WriteLine("Digite o primeiro numero");
-            int a = int.Parse(Console.ReadLine());
+            float a = float.Parse(Console.ReadLine());
             Console.WriteLine("Digite o segundo numero");
-            int b = int.Parse(Console.ReadLine());
-            int resultado = a + b;
+            float b = float.Parse(Console.ReadLine());
+            float resultado = a + b;
             Console.WriteLine($"Resultado da soma é: {resultado}");
             Console.WriteLine("Aperte ENTER para voltar ao menu");
             Console.ReadLine();
         }
-        static void subtracao()
+        static void Subtracao()
         {
             Console.Clear();
             Console.WriteLine("Subtração de dois numeros");
             Console.WriteLine("Digite o primeiro numero");
-            int a = int.Parse(Console.ReadLine());
+            float a = float.Parse(Console.ReadLine());
             Console.WriteLine("Digite o segundo numero");
-            int b = int.Parse(Console.ReadLine());
-            int resultado = a - b;
+            float b = float.Parse(Console.ReadLine());
+            float resultado = a - b;
             Console.WriteLine($"O resultado da subtração é {resultado}");
+            Console.WriteLine("Aperte ENTER para voltar ao menu");
+            Console.ReadLine();
         }
+        static void Divisao()
+        {
+            Console.Clear();
+            Console.WriteLine("Divisao de dois numeros");
+            Console.WriteLine("Digite o primeiro numero");
+            float a = float.Parse(Console.ReadLine());
+            Console.WriteLine("Digite o segundo numero");
+            float b = float.Parse(Console.ReadLine());
+            float resultado = a / b;
+            Console.WriteLine($"O resultado da divisão é {resultado}");
+            Console.WriteLine("Aperte ENTER para voltar ao menu");
+            Console.ReadLine();
+        }
+        static void Multiplicacao()
+        {
+            Console.Clear();
+            Console.WriteLine("Multiplicação de dois numeros");
+            Console.WriteLine("Digite o primeiro numero");
+            float a = float.Parse(Console.ReadLine());
+            Console.WriteLine("Digite o segundo numero");
+            float b = float.Parse(Console.ReadLine());
+            float resultado = a * b;
+            Console.WriteLine($"O resultado da multiplicação é {resultado}");
+            Console.WriteLine("Aperte ENTER para voltar ao menu");
+            Console.ReadLine();
+        }
+        static void Potencia()
+        {
+            Console.Clear();
+            Console.WriteLine("Potencia de um numero");
+            Console.WriteLine("Digite a base da potencia");
+            float a = float.Parse(Console.ReadLine());
+            Console.WriteLine("Digite o expoente da potencia");
+            float b = float.Parse(Console.ReadLine());
+            double resultado = Math.Pow(a,b);
+            Console.WriteLine($"O resultado da multiplicação é {resultado}");
+            Console.WriteLine("Aperte ENTER para voltar ao menu");
+            Console.ReadLine();
+        }
+        static void Raiz()
+        {
+            Console.Clear();
+            Console.WriteLine("Raiz de um numero");
+            Console.WriteLine("Digite o numero");
+            float a = float.Parse(Console.ReadLine());
+            double resultado = Math.Sqrt(a);
+            Console.WriteLine($"O resultado da raiz é {resultado}");
+            Console.WriteLine("Aperte ENTER para voltar ao menu");
+            Console.ReadLine();
+        }
+
         enum Menu { Soma=1,Subtracao,Divisao,Multiplicacao,Potencia,Raiz,Sair}
         static void Main(string[] args)
         {
@@ -45,7 +98,22 @@ namespace Calculadora
                 switch (opcao)
                 {
                     case Menu.Soma:
-                        soma();
+                        Soma();
+                        break;
+                    case Menu.Subtracao:
+                        Subtracao();
+                        break;
+                    case Menu.Divisao:
+                        Divisao();
+                        break;
+                    case Menu.Multiplicacao:
+                        Multiplicacao();
+                        break;
+                    case Menu.Potencia:
+                        Potencia();
+                        break;
+                    case Menu.Raiz:
+                        Raiz();
                         break;
                     case Menu.Sair:
                         sair = true;
