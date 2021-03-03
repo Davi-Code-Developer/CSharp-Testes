@@ -10,14 +10,33 @@ namespace Calculadora
     {
         static void Soma()
         {
+            bool teste = true;
+            float resultado;
+            List<float> soma = new List<float>();
             Console.Clear();
-            Console.WriteLine("Soma de dois numeros");
-            Console.WriteLine("Digite o primeiro numero");
-            float a = float.Parse(Console.ReadLine());
-            Console.WriteLine("Digite o segundo numero");
-            float b = float.Parse(Console.ReadLine());
-            float resultado = a + b;
-            Console.WriteLine($"Resultado da soma é: {resultado}");
+            Console.WriteLine("+++++Soma+++++");
+            if (teste == true)
+            {
+                Console.WriteLine("Digite um numero");
+                float a = float.Parse(Console.ReadLine());
+                if(a != 0)
+                {
+                    soma.Add(a);
+                }
+                else
+                {
+                    teste = false;
+                    foreach (float numero in soma)
+                    {
+                        resultado = +numero;
+                        Console.WriteLine($"A soma dos numeros é: {resultado}");
+                    }
+                }               
+                
+            }
+            
+            
+            
             Console.WriteLine("Aperte ENTER para voltar ao menu");
             Console.ReadLine();
         }
